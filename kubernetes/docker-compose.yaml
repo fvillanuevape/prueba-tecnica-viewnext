@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  price-api:
+    image: price-api:v1
+    environment:
+      - SPRING_DB_PASSWORD=password
+      - SPRING_DB_USERNAME=sa
+    ports:
+      - 8443:8443

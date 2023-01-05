@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: price-api-deployment
+  labels:
+    app: price-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: price-api
+  template:
+    metadata:
+      labels:
+        app: price-api
+    spec:
+      containers:
+        - name: price-api
+          image: price-api:v1
+          ports:
+            - containerPort: 8090
+
+
